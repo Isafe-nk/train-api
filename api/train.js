@@ -40,6 +40,7 @@ module.exports = async (req, res) => {
       if (!entity.vehicle) return null;
       return {
         id: entity.vehicle.vehicle.id,
+        tripId: entity.vehicle.trip ? entity.vehicle.trip.tripId : "Unknown"
         lat: entity.vehicle.position.latitude,
         lng: entity.vehicle.position.longitude,
         speed: entity.vehicle.position.speed || 0,
